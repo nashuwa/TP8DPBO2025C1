@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>JUDUL</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand text-white" href="#"><strong>Data Jurusan</strong></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="index.php">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="universities.php">Universitas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="departments.php">Jurusan</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Form Tambah Jurusan -->
+      <div class="col-lg-4 my-3">
+        <div class="card p-4">
+          <h2 class="card-title">Tambah Jurusan</h2>
+          <form action="departments.php" method="POST">
+            <div class="form-group mb-2">
+              <label for="name">Nama Jurusan</label>
+              <input type="text" class="form-control" name="name" required />
+            </div>
+
+            <div class="form-group mb-2">
+              <label for="faculty">Fakultas</label>
+              <input type="text" class="form-control" name="faculty" required />
+            </div>
+
+            <div class="form-group mb-2">
+              <label for="university_id">Universitas</label>
+              <select class="form-control" name="university_id" required>
+                <option value="">-- Pilih Universitas --</option>
+                OPTION_UNIVERSITIES
+              </select>
+            </div>
+
+            <button type="submit" name="add" class="btn btn-primary mt-3">Tambah</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Tabel Jurusan -->
+      <div class="col-lg-8 my-3">
+        <h1 class="text-center mt-3 mb-4">Tabel Jurusan</h1>
+        <table class="table table-bordered table-striped">
+          <thead class="table-success text-center align-middle">
+            <tr>
+              <th>No</th>
+              <th>Nama Jurusan</th>
+              <th>Fakultas</th>
+              <th>Universitas</th>
+            </tr>
+          </thead>
+          <tbody>
+            DATA_TABEL
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
